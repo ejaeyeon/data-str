@@ -1,5 +1,29 @@
 # 이재연 202630125
 
+## 9월17일(3주차)
+### 파이썬 기본 출력과 리스트 인덱싱.임시 변수를 활용한 데이터 삽입 및 스왑 실습 .
+## 기본출력
+```py
+print("hello, world")
+```
+
+## 임시 변수 활용
+```py
+kakao = ["가나", "다라", "마바", "사아", "자차"]
+temp = kakao[4]
+print(kakao)
+kakao.append("삽입")
+print(kakao)
+kakao[4] = kakao[5]
+kakao[5] = temp
+temp = kakao[3]
+print(kakao)
+kakao[3] = kakao[4]
+kakao[4] = temp
+print(kakao)
+```
+
+
 ## 9월10일(2주차)
 ### 마크다운 문법
 # h1 태그

@@ -1,5 +1,84 @@
 # 이재연 202630125
 
+## 10월8일(5주차)
+### 단순 연결 리스트의 출력 및 노드 삽입 함수 구현
+
+```py
+class Node:
+    def __init__(self):
+        self.data = None
+        self.link = None
+
+
+def printNodes(start):
+    current = start
+    if current == None:
+        return
+    print(current.data, end = ' ')
+    while current.link != None:
+        current = current.link
+        print(current.data, end = ' ')
+    print()
+
+def insertNode(findData, insertData):
+    global memory, head, currentm, pre
+    current = head
+    if current.data == findData:
+        node = Node()
+        node.data = insertData
+        node.link = head
+        head = node
+        return
+
+    while current.link != None:
+        pre = current
+        current = current.link
+        if current.data == findData:
+            node = Node()
+            node.data = insertData
+            node.link = head
+            head = node
+            return
+
+    node = Node()
+    node.data = insertData
+    current.link = node
+
+# 전역 변수 선언
+memory = []
+head, current, pre = None, None, None
+dataArray = ['다현', '정연', '쯔위', '사나', '지효']
+
+if __name__ =="__main__":
+    node = Node()
+    node.data = dataArray[0]
+    head = node
+    memory.append(node)
+
+    for data in dataArray[1:]:
+        pre = node
+        node = Node()
+        node.data = data
+        pre.link = node
+        memory.append(node)
+
+    printNodes(head)
+
+    insertNode("다현", "화사")
+    printNodes(head)
+
+    insertNode("사나", "솔라")
+    printNodes(head)
+    
+    insertNode("재남", "문별")
+    printNodes(head)
+```
+
+
+
+## 노드 출력 함수
+* 배열(Array)은 arr[0], arr[1]처럼 인덱스 번호를 이용해 원하는 위치에 곧바로 접근할 수 있습니다. 반면, 연결 리스트는 메모리 상에 데이터가 연속적으로 존재하지 않고 서로 링크(화살표)로만 이어져 있습니다.
+
 ## 10월1일(4주차)
 ### 선형 리스트
 ## 선형 리스트 기본

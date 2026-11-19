@@ -1,5 +1,46 @@
 # 이재연 202630125
 
+## 11월12일(9주차)
+### 이진트리(Binary Tree) 자료구조의 구현
+
+1. 개념
+이진 트리는 하나의 노드가 최대 2개의 자식 노드(왼쪽, 오른쪽)를 갖는 비선형 자료구조이다.
+각 노드는 데이터와 왼쪽·오른쪽 자식 노드를 가리키는 포인터로 구성되며, 계층적인 데이터 구조를 표현한다.
+
+2. 이진 트리 구조 개념도
+```py
+             [ A ]
+            /     \
+         Left     Right
+          /         \
+        [ B ]       [ C ]
+        /   \       /   \
+      [ D ] [ E ] [ F ] [ G ]
+```
+3. C언어 구조체 구현
+```py
+    #include <stdio.h>
+#include <stdlib.h>
+
+// 이진 트리 노드 구조체
+typedef struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+} Node;
+
+// 노드 생성 함수
+Node* createNode(int value) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+
+    newNode->data = value;
+    newNode->left = NULL;
+    newNode->right = NULL;
+
+    return newNode;
+}
+```
+
 ## 11월5일(8주차)
 ### 큐(queue) 기본 개념
 

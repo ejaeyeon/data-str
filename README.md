@@ -17,29 +17,6 @@
         /   \       /   \
       [ D ] [ E ] [ F ] [ G ]
 ```
-3. C언어 구조체 구현
-```py
-    #include <stdio.h>
-#include <stdlib.h>
-
-// 이진 트리 노드 구조체
-typedef struct Node {
-    int data;
-    struct Node* left;
-    struct Node* right;
-} Node;
-
-// 노드 생성 함수
-Node* createNode(int value) {
-    Node* newNode = (Node*)malloc(sizeof(Node));
-
-    newNode->data = value;
-    newNode->left = NULL;
-    newNode->right = NULL;
-
-    return newNode;
-}
-```
 
 ## 11월5일(8주차)
 ### 큐(queue) 기본 개념
